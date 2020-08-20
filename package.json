@@ -1,0 +1,23 @@
+{
+  "name": "log-log-log",
+  "version": "1.0.0",
+  "description": "node logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradcgarner/log-log-log.git"
+  },
+  "keywords": [
+    "node",
+    "logger"
+  ],
+  "author": "Brad C. Garner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradcgarner/log-log-log/issues"
+  },
+  "homepage": "https://github.com/bradcgarner/log-log-log#readme"
+}
