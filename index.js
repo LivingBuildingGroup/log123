@@ -67,7 +67,9 @@ Logger.prototype.log = function() {
         message += ' ' + sys.inspect(arg, false, null);
       }
     });
-    message = this.format(Logger.levels[log_index], new Date(), message);
+    message = this.options === 'no-header' ?
+      message :
+      this.format(Logger.levels[log_index], new Date(), message);
     this.write(message + '\n');
     return message;
   }
