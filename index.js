@@ -10,11 +10,12 @@ const makeArray = function(nonarray) {
 
 // Create a new instance of Logger, logging to the file at `log_file_path`
 // if `log_file_path` is null, log to STDOUT.
-const Logger = function(log_file_path) {
+const Logger = function(log_file_path, options) {
   // default write is STDOUT
   // eslint-disable-next-line no-console
   this.write     = console.log;
   this.log_level_index = 3;
+  this.options = options;
   
   // if a path is given, try to write to it
   if (log_file_path) {
@@ -55,7 +56,7 @@ Logger.prototype.log = function() {
   if (log_index === -1) { 
     log_index = this.log_level_index; 
   } else {
-    // the first arguement actually was the log level
+    // the first argument actually was the log level
     args.shift();
   }
   if (log_index <= this.log_level_index) {
@@ -85,6 +86,6 @@ Logger.levels.forEach(function(level) {
 });
 
 exports.Logger = Logger;
-exports.createLogger = function(log_file_path) {
-  return new Logger(log_file_path);
+exports.createLogger = function(log_file_path, options) {
+  return new Logger(log_file_path, options);
 };
